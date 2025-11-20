@@ -7,17 +7,17 @@ const caseStudies = [
   {
     title: "AI Automation Dashboard",
     desc: "A modern automation control panel with intelligent workflows, embeddings, and real-time insights.",
-    image: "/images/case-studies/cs_01.png",
+    image: "/images/case-studies/cs_01.webp",
   },
   {
     title: "Finance Analytics Platform",
     desc: "Data visualization, KPI dashboards, predictive analytics and user-centric design.",
-    image: "/images/case-studies/cs_02.png",
+    image: "/images/case-studies/cs_02.webp",
   },
   {
     title: "SaaS Productivity Tool",
     desc: "End-to-end product built with full-stack architecture and a delightful UX experience.",
-    image: "/images/case-studies/cs_03.png",
+    image: "/images/case-studies/cs_03.webp",
   },
 ];
 

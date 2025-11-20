@@ -15,7 +15,7 @@ export default function AboutSection() {
           className="rounded-xl overflow-hidden shadow-lg"
         >
           <img
-            src="/images/about/img_01.png"
+            src="/images/about/about_01.webp"
             alt="Agency Team"
             className="w-full h-full object-cover"
           />
