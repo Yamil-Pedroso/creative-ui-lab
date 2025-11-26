@@ -207,7 +207,7 @@ export default function Home() {
                 />*/}
 
                 <VideComp
-                  videoUrl={selected.fullImageUrl || ""}
+                  videoUrl={selected.fullVideoUrl || ""}
                   width={1000}
                   height={400}
                 />
