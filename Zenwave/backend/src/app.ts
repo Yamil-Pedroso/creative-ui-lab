@@ -1,5 +1,17 @@
-import express, { Application, Request, Response } from "express";
+import path from "path";
 import dotenv from "dotenv";
+
+// Detect environment
+const isProd = process.env.NODE_ENV === "production";
+
+// Load config.env in dev, .env in prod
+dotenv.config({
+  path: isProd
+    ? path.join(process.cwd(), ".env") // Producción
+    : path.join(__dirname, "config", "config.env"), // Desarrollo local
+});
+
+import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
@@ -11,22 +23,22 @@ import favoritesRoutes from "./routes/favorite";
 import feedbackRoutes from "./routes/feedback";
 import sessionRoutes from "./routes/session";
 
-// Cargar archivo config.env
-dotenv.config({ path: "./config.env" });
-
 const app: Application = express();
 
-// Middlewares globales
+// CORS
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: [
+      "http://localhost:3000",
+      "https://creative-ui-lab.vercel.app",
+      "https://creative-ui-lab-3868.vercel.app",
+    ],
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
 app.use(express.json());
+
 app.use(
   helmet({
     crossOriginOpenerPolicy: { policy: "unsafe-none" },
@@ -36,13 +48,11 @@ app.use(
 
 app.use(morgan("dev"));
 
-// static files
-import path from "path";
-
+// Static files
 app.use("/images", express.static(path.join(__dirname, "../public/images")));
 app.use("/video", express.static(path.join(__dirname, "../public/video")));
 
-// Rutas
+// Routes
 app.use("/api/auth", userRoutes);
 app.use("/api/meditations", meditationRoutes);
 app.use("/api/favorites", favoritesRoutes);
@@ -50,14 +60,8 @@ app.use("/api/sessions", sessionRoutes);
 app.use("/api/feedbacks", feedbackRoutes);
 app.use("/api/users", userRoutes);
 
-// Ruta default
 app.get("/", (req: Request, res: Response) => {
   res.send("Meditation API is running 🚀");
 });
-
-// Manejo de rutas no encontradas
-//app.all(".*", (req, res) => {
-//  res.status(404).json({ message: `Route ${req.originalUrl} not found` });
-//});
 
 export default app;

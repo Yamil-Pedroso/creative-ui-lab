@@ -10,11 +10,14 @@ interface Meditation {
   _id: string;
   title: string;
   category: string;
-  imageUrl: string;
-  videoUrl?: string;
   duration: number;
-}
 
+  image: string;
+  fullImageUrl: string;
+
+  video?: string;
+  fullVideoUrl?: string;
+}
 export default function Home() {
   const [meditations, setMeditations] = useState<Meditation[]>([]);
   const [loading, setLoading] = useState(true);
@@ -89,7 +92,7 @@ export default function Home() {
                 >
                   <div className="relative w-36 h-36 overflow-hidden rounded-full bg-white/5 flex items-center justify-center">
                     <Image
-                      src={m.imageUrl}
+                      src={m.fullImageUrl}
                       alt={m.title}
                       fill
                       unoptimized
@@ -204,7 +207,7 @@ export default function Home() {
                 />*/}
 
                 <VideComp
-                  videoUrl={selected.videoUrl || ""}
+                  videoUrl={selected.fullVideoUrl || ""}
                   width={1000}
                   height={400}
                 />

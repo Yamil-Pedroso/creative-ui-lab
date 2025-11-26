@@ -10,8 +10,13 @@ interface Meditation {
   _id: string;
   title: string;
   category: string;
-  imageUrl: string;
   duration: number;
+
+  image: string;
+  fullImageUrl: string;
+
+  video?: string;
+  fullVideoUrl?: string;
 }
 
 export default function MeditationsPage() {
@@ -187,7 +192,7 @@ export default function MeditationsPage() {
             {/* IMAGE */}
             <div className="relative w-full h-[60%] rounded-[30px] overflow-hidden z-10 shrink-0">
               <Image
-                src={m.imageUrl}
+                src={m.fullImageUrl}
                 alt={m.title}
                 fill
                 unoptimized
