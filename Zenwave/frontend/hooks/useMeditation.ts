@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { useState, useCallback } from "react";
 import {
   getAllMeditations,
@@ -8,9 +9,15 @@ import {
   deleteMeditation,
 } from "@/services/meditationService";
 
+import {
+  Meditation,
+  CreateMeditationDTO,
+  UpdateMeditationDTO,
+} from "@/types/meditations";
+
 export function useMeditation() {
-  const [meditations, setMeditations] = useState<any[]>([]);
-  const [meditation, setMeditation] = useState<any>(null);
+  const [meditations, setMeditations] = useState<Meditation[]>([]);
+  const [meditation, setMeditation] = useState<Meditation | null>(null);
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -25,15 +32,13 @@ export function useMeditation() {
 
       const res = await getAllMeditations();
 
-      // Normalizar respuesta SIEMPRE a array
-      const list = Array.isArray(res)
+      const list: Meditation[] = Array.isArray(res)
         ? res
         : Array.isArray(res.meditations)
         ? res.meditations
         : [];
 
       setMeditations(list);
-
       return list;
     } catch (err: any) {
       setError(err.message || "Error loading meditations");
@@ -51,7 +56,7 @@ export function useMeditation() {
       setLoading(true);
       setError(null);
 
-      const data = await getMeditationById(id);
+      const data: Meditation = await getMeditationById(id);
       setMeditation(data);
 
       return data;
@@ -66,12 +71,12 @@ export function useMeditation() {
   // ---------------------------
   // Create meditation
   // ---------------------------
-  const create = useCallback(async (form: any) => {
+  const create = useCallback(async (form: CreateMeditationDTO) => {
     try {
       setLoading(true);
       setError(null);
 
-      const newMeditation = await createMeditation(form);
+      const newMeditation: Meditation = await createMeditation(form);
       setMeditations((prev) => [...prev, newMeditation]);
 
       return newMeditation;
@@ -87,12 +92,12 @@ export function useMeditation() {
   // Update meditation
   // ---------------------------
   const update = useCallback(
-    async (id: string, form: any) => {
+    async (id: string, form: UpdateMeditationDTO) => {
       try {
         setLoading(true);
         setError(null);
 
-        const updated = await updateMeditation(id, form);
+        const updated: Meditation = await updateMeditation(id, form);
 
         setMeditations((prev) => prev.map((m) => (m._id === id ? updated : m)));
 
@@ -118,7 +123,6 @@ export function useMeditation() {
       setError(null);
 
       await deleteMeditation(id);
-
       setMeditations((prev) => prev.filter((m) => m._id !== id));
 
       return true;
@@ -133,7 +137,6 @@ export function useMeditation() {
   return {
     meditations,
     meditation,
-
     loading,
     error,
     fetchMeditations,

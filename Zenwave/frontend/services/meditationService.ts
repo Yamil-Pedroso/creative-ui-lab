@@ -1,4 +1,5 @@
 import { api } from "@/lib/api";
+import { CreateMeditationDTO, UpdateMeditationDTO } from "@/types/meditations";
 
 export const getAllMeditations = async () => {
   try {
@@ -19,16 +20,7 @@ export const getMeditationById = async (id: string) => {
   }
 };
 
-export const createMeditation = async (form: {
-  title: string;
-  category: string;
-  duration: number;
-  level: string;
-  description: string;
-  audioUrl: string;
-  videoUrl?: string;
-  imageUrl: string;
-}) => {
+export const createMeditation = async (form: CreateMeditationDTO) => {
   try {
     const response = await api.post("/meditations", form);
     return response.data;
@@ -39,16 +31,7 @@ export const createMeditation = async (form: {
 
 export const updateMeditation = async (
   id: string,
-  form: {
-    title?: string;
-    category?: string;
-    duration?: number;
-    level?: string;
-    description?: string;
-    audioUrl?: string;
-    videoUrl?: string;
-    imageUrl?: string;
-  }
+  form: UpdateMeditationDTO
 ) => {
   try {
     const response = await api.put(`/meditations/${id}`, form);

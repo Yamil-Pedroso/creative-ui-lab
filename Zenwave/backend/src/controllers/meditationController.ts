@@ -1,25 +1,21 @@
 import { Request, Response } from "express";
-import { Types } from "mongoose";
 import Meditation from "../models/Meditation";
-import Favorite from "../models/Favorite";
 import { cacheGet, cacheSet } from "../utils/cache";
 
 class MeditationController {
   // ⭐ GET ALL – /api/meditations
   async getAllMeditations(req: Request, res: Response) {
-    const countMedications = await Meditation.countDocuments();
     try {
-      // 1. Buscar en Redis
       const cached = await cacheGet("meditations_all");
+      const countMedications = await Meditation.countDocuments();
+
       if (cached) {
         console.log("⚡ From Redis");
         return res.json(cached);
       }
 
-      // 2. Si no está en cache → pedir a Mongo
       const meditations = await Meditation.find();
 
-      // 3. Guardar en Redis por 60 segundos (configurable)
       await cacheSet(
         "meditations_all",
         { count: countMedications, meditations },
@@ -37,9 +33,7 @@ class MeditationController {
   // ⭐ GET BY ID – /api/meditations/:id
   async getMeditationById(req: Request, res: Response) {
     try {
-      const meditationId = req.params.id;
-
-      const meditation = await Meditation.findById(meditationId);
+      const meditation = await Meditation.findById(req.params.id);
 
       if (!meditation) {
         return res.status(404).json({ message: "Meditation not found" });
@@ -62,8 +56,8 @@ class MeditationController {
         level,
         description,
         audioUrl,
-        videoUrl,
-        imageUrl,
+        image,
+        video,
       } = req.body;
 
       const meditation = await Meditation.create({
@@ -73,8 +67,8 @@ class MeditationController {
         level,
         description,
         audioUrl,
-        videoUrl,
-        imageUrl,
+        image, // <-- AHORA correcto
+        video, // <-- AHORA correcto
       });
 
       return res.status(201).json({
@@ -90,10 +84,8 @@ class MeditationController {
   // ⭐ UPDATE – PUT /api/meditations/:id
   async updateMeditation(req: Request, res: Response) {
     try {
-      const meditationId = req.params.id;
-
       const updated = await Meditation.findByIdAndUpdate(
-        meditationId,
+        req.params.id,
         req.body,
         { new: true }
       );
@@ -115,17 +107,13 @@ class MeditationController {
   // ⭐ DELETE – DELETE /api/meditations/:id
   async deleteMeditation(req: Request, res: Response) {
     try {
-      const meditationId = req.params.id;
-
-      const deleted = await Meditation.findByIdAndDelete(meditationId);
+      const deleted = await Meditation.findByIdAndDelete(req.params.id);
 
       if (!deleted) {
         return res.status(404).json({ message: "Meditation not found" });
       }
 
-      return res.json({
-        message: "Meditation deleted",
-      });
+      return res.json({ message: "Meditation deleted" });
     } catch (error) {
       console.error("Error deleting meditation:", error);
       res.status(500).json({ message: "Internal server error" });
