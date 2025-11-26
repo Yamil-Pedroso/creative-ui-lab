@@ -2,7 +2,7 @@ import axios from "axios";
 import { useAuthStore } from "@/store/useAuthStore";
 
 export const api = axios.create({
-  baseURL: "http://localhost:3010/api",
+  baseURL: "https://zenwave-api.yampe.dev",
 });
 
 // Attach the token before every request
