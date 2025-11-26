@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+video.smooth-loop {
+  animation: fadeInVideo 0.3s ease-in-out;
+}
+
+@keyframes fadeInVideo {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes magicParticleVariable {
+  0% {
+    transform: translateY(0px) scale(0.8);
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-magicParticleVariable {
+  animation-name: magicParticleVariable;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
