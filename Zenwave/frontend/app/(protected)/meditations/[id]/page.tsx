@@ -83,9 +83,9 @@ export default function MeditationDetailsPage() {
 
         {/* IMAGE / VIDEO SECTION */}
         <div className="relative w-full h-[340px] rounded-2xl overflow-hidden mt-10 shadow-xl">
-          {meditation.videoUrl ? (
+          {meditation.fullVideoUrl ? (
             <video
-              src={meditation.videoUrl}
+              src={meditation.fullVideoUrl}
               autoPlay
               muted
               loop
@@ -94,7 +94,7 @@ export default function MeditationDetailsPage() {
             />
           ) : (
             <Image
-              src={meditation.imageUrl}
+              src={meditation.fullImageUrl}
               alt={meditation.title}
               fill
               unoptimized
