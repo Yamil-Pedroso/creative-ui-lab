@@ -1,0 +1,170 @@
+{
+  "categories": [
+    {
+      "id": "calm",
+      "name": "Calm & Relaxation",
+      "description": "Sessions designed to help you release stress and unwind."
+    },
+    {
+      "id": "sleep",
+      "name": "Better Sleep",
+      "description": "Meditations that prepare your body and mind for deep, restful sleep."
+    },
+    {
+      "id": "focus",
+      "name": "Focus & Productivity",
+      "description": "Techniques to improve concentration and mental clarity."
+    },
+    {
+      "id": "anxiety",
+      "name": "Anxiety Relief",
+      "description": "Breathing and grounding practices to calm overwhelming emotions."
+    }
+  ],
+  "meditations": [
+    {
+      "id": "med_001",
+      "title": "Breathing for Calm",
+      "category": "calm",
+      "duration": 6,
+      "likes": 0,
+      "level": "Beginner",
+      "image": "http://localhost:3010/images/meditations/medi_01.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_01.mp4",
+      "content": "Begin by finding a comfortable seated position. Close your eyes gently and inhale slowly through your nose. Feel your chest expand, and hold your breath for two seconds. Exhale softly through your mouth. Repeat this cycle, allowing thoughts to pass without judgment. With every breath, let tension melt away.",
+      "tags": ["breathing", "relaxation", "stress-relief"]
+    },
+    {
+      "id": "med_002",
+      "title": "Full Body Scan",
+      "category": "calm",
+      "duration": 12,
+      "likes": 0,
+      "level": "Intermediate",
+      "image": "http://localhost:3010/images/meditations/medi_02.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_02.mp4",
+      "content": "Lie down or sit comfortably. Bring your awareness to the top of your head, slowly scanning downward through your body. Notice sensations without trying to change them. Relax your forehead, jaw, shoulders, chest, and legs. Allow gravity to support you fully. Breathe slowly as your body softens.",
+      "tags": ["body-scan", "relaxation", "mindfulness"]
+    },
+    {
+      "id": "med_003",
+      "title": "Deep Sleep Journey",
+      "category": "sleep",
+      "duration": 15,
+      "likes": 0,
+      "level": "Beginner",
+      "image": "http://localhost:3010/images/meditations/medi_03.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_01.mp4",
+      "content": "Prepare for sleep by lying in a comfortable position. Take a long inhale, followed by a slow exhale. Imagine your body sinking deeper into the mattress. Visualize a soft blue light surrounding you, guiding you gently toward rest. Let intrusive thoughts drift away like clouds passing in the night sky.",
+      "tags": ["sleep", "night", "deep-rest"]
+    },
+    {
+      "id": "med_004",
+      "title": "Focus Reset",
+      "category": "focus",
+      "duration": 8,
+      "likes": 0,
+      "level": "Beginner",
+      "image": "http://localhost:3010/images/meditations/medi_04.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_01.mp4",
+      "content": "Sit upright and take a deep breath. Bring your attention to a single point: your breath. Every time your mind wanders, gently guide it back without judgment. Imagine a clear mental space opening in front of you. This resets your focus and improves your ability to stay present.",
+      "tags": ["productivity", "focus", "clarity"]
+    },
+    {
+      "id": "med_005",
+      "title": "Anxiety Release",
+      "category": "anxiety",
+      "duration": 10,
+      "likes": 0,
+      "level": "Advanced",
+      "image": "http://localhost:3010/images/meditations/medi_05.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_01.mp4",
+      "content": "Place one hand on your chest and one on your stomach. Inhale for four seconds, hold for two, and exhale for six. This slows your nervous system. Visualize your worries dissolving like sand in water. You are grounded, safe, and in control. Allow peace to fill the space anxiety once occupied.",
+      "tags": ["anxiety", "breathing", "grounding"]
+    },
+    {
+      "id": "med_006",
+      "title": "Loving-Kindness Meditation",
+      "category": "calm",
+      "duration": 14,
+      "likes": 0,
+      "level": "Intermediate",
+      "image": "http://localhost:3010/images/meditations/medi_06.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_01.mp4",
+      "content": "Sit comfortably and close your eyes. Begin by sending loving-kindness to yourself with the phrases: 'May I be happy. May I be healthy. May I be safe.' Gradually extend these wishes to loved ones, acquaintances, and even those you find challenging. Feel the warmth of compassion expanding within you.",
+      "tags": ["loving-kindness", "compassion", "self-care"]
+    },
+    {
+      "id": "med_007",
+      "title": "Mindful Walking",
+      "category": "focus",
+      "duration": 10,
+      "likes": 0,
+      "level": "Beginner",
+      "image": "http://localhost:3010/images/meditations/medi_07.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_01.mp4",
+      "content": "Find a quiet place to walk slowly. As you take each step, bring your full attention to the sensation of your feet touching the ground. Notice the movement of your legs and the rhythm of your breath. If your mind wanders, gently bring it back to the experience of walking.",
+      "tags": ["mindfulness", "walking", "presence"]
+    },
+    {
+      "id": "med_008",
+      "title": "Progressive Muscle Relaxation",
+      "category": "anxiety",
+      "duration": 12,
+      "likes": 0,
+      "level": "Intermediate",
+      "image": "http://localhost:3010/images/meditations/medi_08.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_01.mp4",
+      "content": "Starting from your toes, tense each muscle group for five seconds, then release. Move upward through your body: calves, thighs, abdomen, chest, arms, and face. Notice the contrast between tension and relaxation. This practice helps reduce physical stress and anxiety.",
+      "tags": ["muscle-relaxation", "anxiety", "stress-relief"]
+    },
+    {
+      "id": "med_009",
+      "title": "Visualization for Sleep",
+      "category": "sleep",
+      "duration": 10,
+      "likes": 0,
+      "level": "Beginner",
+      "image": "http://localhost:3010/images/meditations/medi_09.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_01.mp4",
+      "content": "Lie down comfortably and close your eyes. Imagine a peaceful place, such as a beach or forest. Engage all your senses: feel the breeze, hear the sounds, see the colors. Let this serene environment lull you into a state of deep relaxation, preparing you for restful sleep.",
+      "tags": ["visualization", "sleep", "relaxation"]
+    },
+    {
+      "id": "med_010",
+      "title": "5-Minute Mindfulness Break",
+      "category": "focus",
+      "duration": 5,
+      "likes": 0,
+      "level": "Beginner",
+      "image": "http://localhost:3010/images/meditations/medi_10.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_01.mp4",
+      "content": "Take a short break from your day to practice mindfulness. Sit comfortably and focus on your breath. Notice the sensation of air entering and leaving your body. If your mind wanders, gently bring it back to your breath. This quick practice can refresh your mind and enhance focus.",
+      "tags": ["mindfulness", "break", "focus"]
+    },
+    {
+      "id": "med_011",
+      "title": "Grounding Exercise for Anxiety",
+      "category": "anxiety",
+      "duration": 7,
+      "likes": 0,
+      "level": "Beginner",
+      "image": "http://localhost:3010/images/meditations/medi_11.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_01.mp4",
+      "content": "Sit or stand comfortably. Focus on your five senses to ground yourself in the present moment. Identify five things you can see, four you can touch, three you can hear, two you can smell, and one you can taste. This exercise helps reduce anxiety by anchoring you to the here and now.",
+      "tags": ["grounding", "anxiety", "present-moment"]
+    },
+    {
+      "id": "med_012",
+      "title": "Evening Reflection",
+      "category": "sleep",
+      "duration": 8,
+      "likes": 0,
+      "level": "Intermediate",
+      "image": "http://localhost:3010/images/meditations/medi_12.webp",
+      "video": "http://localhost:3010/video/meditations/medi_v_01.mp4",
+      "content": "Before bed, take a moment to reflect on your day. Acknowledge any accomplishments or positive moments. Let go of any lingering stress or worries by visualizing them floating away. Focus on feelings of gratitude and peace as you prepare your mind and body for restful sleep.",
+      "tags": ["reflection", "sleep", "gratitude"]
+    }
+  ]
+}
