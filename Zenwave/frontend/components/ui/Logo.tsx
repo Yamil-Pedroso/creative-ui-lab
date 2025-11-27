@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <motion.div
       whileHover={{ scale: 1.08 }}
-      className="font-mono font-bold text-xl bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+      className="font-mono font-bold text-xl bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
     >
       {"Zenwave"}
     </motion.div>

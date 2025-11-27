@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getAllMeditations } from "@/services/meditationService";
+import { useMeditation } from "@/hooks/useMeditation";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import VideComp from "@/components/common/VideComp";
@@ -19,20 +19,11 @@ interface Meditation {
   fullVideoUrl?: string;
 }
 export default function Home() {
-  const [meditations, setMeditations] = useState<Meditation[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { meditations, loading, fetchMeditations } = useMeditation();
   const [selected, setSelected] = useState<Meditation | null>(null);
 
   useEffect(() => {
-    async function load() {
-      try {
-        const data = await getAllMeditations();
-        setMeditations(Array.isArray(data) ? data : data.meditations || []);
-      } finally {
-        setLoading(false);
-      }
-    }
-    load();
+    fetchMeditations();
   }, []);
 
   if (loading) {

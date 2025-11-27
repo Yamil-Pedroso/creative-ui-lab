@@ -12,6 +12,8 @@ export default function Navbar() {
   const user = useAuthStore((state) => state.user);
   const logout = useAuthStore((state) => state.logout);
 
+  console.log("Navbar user:", user?.name);
+
   const protectedLinks = [
     { href: "/meditations", label: "Meditations" },
     { href: "/favorites", label: "Favorites" },
@@ -26,6 +28,16 @@ export default function Navbar() {
         <Link href="/" className="flex items-center">
           <Logo />
         </Link>
+
+        <div className="text-white/80">
+          Welcome,{" "}
+          <span
+            className="font-semibold bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent
+          "
+          >
+            {user?.name}
+          </span>
+        </div>
 
         {/* DESKTOP MENU */}
         <div className="hidden md:flex gap-8 items-center">
