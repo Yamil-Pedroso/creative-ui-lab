@@ -11,9 +11,11 @@ class FavoritesController {
         "meditations"
       );
 
+      console.log("Get favorites for user:", userId);
+
       return res.json({
         favorites: {
-          meditations: favorites?.meditations || [],
+          meditations: favorites ? favorites.meditations : [],
         },
       });
     } catch (error) {
@@ -30,6 +32,9 @@ class FavoritesController {
       const meditationObj = new Types.ObjectId(meditationId);
 
       let favorites = await Favorite.findOne({ user: userId });
+
+      console.log("User ID:", userId);
+      console.log("Meditation ID:", meditationId);
 
       if (!favorites) {
         favorites = await Favorite.create({

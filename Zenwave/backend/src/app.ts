@@ -2,14 +2,6 @@ import path from "path";
 import dotenv from "dotenv";
 
 // Detect environment
-const isProd = process.env.NODE_ENV === "production";
-
-// Load config.env in dev, .env in prod
-dotenv.config({
-  path: isProd
-    ? path.join(process.cwd(), ".env") // Producción
-    : path.join(__dirname, "config", "config.env"), // Desarrollo local
-});
 
 import express, { Application, Request, Response } from "express";
 import cors from "cors";

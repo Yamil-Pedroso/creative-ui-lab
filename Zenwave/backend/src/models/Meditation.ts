@@ -44,14 +44,14 @@ const MeditationSchema = new Schema<MeditationDoc>(
 
 // 🌍 Obtener BASE_URL dinámicamente
 MeditationSchema.virtual("fullImageUrl").get(function () {
-  const BASE = process.env.BASE_URL || "http://localhost:3010";
+  const BASE = process.env.BASE_URL;
   return `${BASE}/images/${this.image}`;
 });
 
 MeditationSchema.virtual("fullVideoUrl").get(function () {
   if (!this.video) return null;
 
-  const BASE = process.env.BASE_URL || "http://localhost:3010";
+  const BASE = process.env.BASE_URL;
   return `${BASE}/video/${this.video}`;
 });
 

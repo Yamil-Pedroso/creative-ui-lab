@@ -33,6 +33,7 @@ class UserController {
 
   async login(req: Request, res: Response) {
     try {
+      const userId = req.user?.id;
       const { email, password } = req.body;
 
       const user = await User.findOne({ email });
@@ -49,7 +50,11 @@ class UserController {
         { expiresIn: "7d" }
       );
 
-      res.json({ token, user });
+      res.json({
+        token,
+        user,
+        message: `User ${user.name} logged in successfully`,
+      });
     } catch (error) {
       res.status(500).json({ message: "Error logging in", error });
     }
@@ -117,8 +122,15 @@ class UserController {
 
   // LOGOUT USER
   async logout(req: Request, res: Response) {
-    // Since JWT is stateless, logout can be handled on the client side
-    res.json({ message: "User logged out successfully" });
+    try {
+      const userId = req.user?.id;
+      res.json({
+        message: `User ${userId} logged out successfully`,
+        userId: userId,
+      });
+    } catch (error) {
+      res.status(500).json({ message: "Error logging out", error });
+    }
   }
 }
 
