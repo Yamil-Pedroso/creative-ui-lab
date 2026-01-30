@@ -1,12 +1,10 @@
 "use client";
-
 import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
     <section className="w-full py-24 bg-neutral-900 text-white">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        {/* Left Image / Illustration */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}

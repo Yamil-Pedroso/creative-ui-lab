@@ -5,14 +5,12 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-28 px-6 bg-[#0d0d0f] text-white">
-      {/* Background Glow */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-purple-600/20 blur-[180px]" />
         <div className="absolute bottom-[-25%] left-1/4 w-[500px] h-[500px] rounded-full bg-blue-600/20 blur-[180px]" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        {/* Animated Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -22,7 +20,6 @@ export default function Hero() {
           Nexacore Tech Consulting Agency
         </motion.div>
 
-        {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,7 +33,6 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,7 +43,6 @@ export default function Hero() {
           AI, cloud architecture, and high-performance engineering.
         </motion.p>
 
-        {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -30,7 +30,6 @@ export default function ProcessSection() {
   return (
     <section className="w-full py-32 bg-[#0a0a0a] text-white" id="process">
       <div className="max-w-5xl mx-auto px-6">
-        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,17 +63,14 @@ export default function ProcessSection() {
                 viewport={{ once: true }}
                 className="relative pl-10 pb-16"
               >
-                {/* Line dot */}
                 <div className="absolute left-[-11px] top-1">
                   <div className="w-5 h-5 rounded-full bg-blue-500 shadow-lg shadow-blue-500/40"></div>
                 </div>
 
-                {/* Icon */}
                 <div className="mb-4">
                   <Icon size={38} className="text-blue-400" />
                 </div>
 
-                {/* Text */}
                 <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
                 <p className="text-neutral-400 leading-relaxed">{step.desc}</p>
               </motion.div>

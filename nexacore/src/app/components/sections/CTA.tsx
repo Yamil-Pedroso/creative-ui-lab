@@ -8,19 +8,17 @@ export default function CTASection() {
       id="cta"
       className="
         w-full py-32
-        bg-gradient-to-br
+        bg-linear-to-br
         from-[#0d0d0f] via-[#0a0a0a] to-[#0d0d0f]
         relative overflow-hidden
       "
     >
-      {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-32 right-0 w-72 h-72 bg-blue-600/30 blur-[120px] rounded-full"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600/25 blur-[120px] rounded-full"></div>
       </div>
 
       <div className="relative max-w-4xl mx-auto px-6 text-center text-white">
-        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +29,6 @@ export default function CTASection() {
           Ready to Build Something Exceptional?
         </motion.h2>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,7 +40,6 @@ export default function CTASection() {
           make an impact.
         </motion.p>
 
-        {/* Button */}
         <motion.a
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

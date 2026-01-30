@@ -6,10 +6,9 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 export default function Contact() {
   return (
     <section className="relative w-full py-24 bg-[#0A0A0F] overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#11111a] to-[#0A0A0F] pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#11111a] to-[#0A0A0F] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +25,6 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          {/* Left Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -58,18 +56,15 @@ export default function Contact() {
               <span>Zürich, Switzerland</span>
             </div>
 
-            {/* Decorative gradient */}
-            <div className="w-full h-40 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl blur-xl opacity-60" />
+            <div className="w-full h-40 bg-linear-to-r from-blue-600/20 to-purple-600/20 rounded-xl blur-xl opacity-60" />
           </motion.div>
 
-          {/* Contact Form */}
           <motion.form
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             className="bg-[#11111a]/40 backdrop-blur-xl border border-white/10 p-8 rounded-2xl shadow-xl space-y-6"
           >
-            {/* Name */}
             <div>
               <label className="text-gray-300 text-sm mb-1 block">Name</label>
               <input
@@ -80,7 +75,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* Email */}
             <div>
               <label className="text-gray-300 text-sm mb-1 block">Email</label>
               <input
@@ -91,7 +85,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* Message */}
             <div>
               <label className="text-gray-300 text-sm mb-1 block">
                 Message
@@ -102,11 +95,10 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            {/* Submit Button */}
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:opacity-90 transition"
+              className="w-full flex items-center justify-center gap-2 bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:opacity-90 transition"
             >
               Send Message
               <Send className="w-5 h-5" />

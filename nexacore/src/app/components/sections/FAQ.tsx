@@ -29,7 +29,6 @@ export default function FAQSection() {
   return (
     <section className="w-full py-32 bg-[#0a0a0a] text-white" id="faq">
       <div className="max-w-4xl mx-auto px-6">
-        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +49,6 @@ export default function FAQSection() {
           Everything you need to know before working with us.
         </motion.p>
 
-        {/* FAQ List */}
         <div className="space-y-6">
           {faqs.map((item, index) => {
             const isOpen = openIndex === index;

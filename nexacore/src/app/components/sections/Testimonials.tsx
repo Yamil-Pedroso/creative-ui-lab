@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -30,7 +31,6 @@ const testimonials = [
   },
 ];
 
-// Duplicate testimonials for infinite loop
 const marqueeList = [...testimonials, ...testimonials];
 
 export default function Testimonials() {
@@ -40,7 +40,6 @@ export default function Testimonials() {
       id="testimonials"
     >
       <div className="max-w-6xl mx-auto px-6">
-        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +60,6 @@ export default function Testimonials() {
           Trusted by companies, startups, and teams around the world.
         </motion.p>
 
-        {/* MARQUEE */}
         <div className="relative w-full overflow-hidden">
           <motion.div
             className="flex gap-8"

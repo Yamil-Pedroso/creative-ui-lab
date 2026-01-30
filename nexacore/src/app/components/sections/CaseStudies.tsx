@@ -25,7 +25,6 @@ export default function CaseStudies() {
   return (
     <section className="w-full py-32 bg-[#0a0a0a] text-white">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +46,6 @@ export default function CaseStudies() {
           delivered with precision.
         </motion.p>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {caseStudies.map((project, index) => (
             <motion.div
@@ -70,13 +68,11 @@ export default function CaseStudies() {
                   className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition"
                 />
 
-                {/* Hover overlay */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                   <ArrowUpRight className="text-white text-4xl" />
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-neutral-400 text-sm leading-relaxed">

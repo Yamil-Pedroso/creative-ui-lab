@@ -17,7 +17,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Detect scroll to animate navbar background
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -47,7 +46,6 @@ export default function Navbar() {
           Nexacore<span className="text-blue-500">.</span>
         </Link>
 
-        {/* Desktop links */}
         <div className="hidden md:flex gap-10">
           {navLinks.map((link) => (
             <a
@@ -60,7 +58,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-white"
           onClick={() => setOpen((prev) => !prev)}
@@ -69,7 +66,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
